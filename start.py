@@ -1,9 +1,6 @@
-from dotenv import load_dotenv
-import os
-from bot import bot
+from bot.bot import DiscordBot
+from bot.giphy import Giphy
 
-load_dotenv()
-token = os.getenv("BOT_TOKEN")
-
-client = bot.DiscordClient()
-client.run(token)
+gif = Giphy()
+bot = DiscordBot(gif)
+bot.run()
